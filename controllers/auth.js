@@ -80,12 +80,6 @@ const loginUsuario = async (req,res= response)=>{
             msg: 'Contactese con el administrador'
         })
     }
-
-    res.json({
-        ok:  true,
-        msg: 'login',
-        
-    })
 };
 
 const revalidarJWT= async (req,res)=>{
@@ -99,7 +93,11 @@ const revalidarJWT= async (req,res)=>{
     res.json({
         ok:  true,
         msg: 'renew',
-        token
+        user:{
+            token,
+            uid,
+            name
+        }
     })
 }
 
